@@ -1,0 +1,100 @@
+{
+  "common": {
+    "success_message": {
+      "copy": "複製成功"
+    },
+    "default_name": "普通用戶"
+  },
+  "errors": {},
+  "pages": {
+    "error": {
+      "403": "對不起，您沒有訪問此頁面的權限。",
+      "404": "對不起，我們找不到相關頁面。",
+      "500": "對不起，系統錯誤，請稍後再試。",
+      "unknown": "對不起，發生未知錯誤。({{code}})",
+      "back_message": "你可按以下連結回到香港01網站繼續瀏覽，謝謝。",
+      "back_to_hk01_site": "返回香港01"
+    },
+    "me": {
+      "login": "登入",
+      "loading": "請稍候...",
+      "content": "請登入以查看01號內容"
+    }
+  },
+  "components": {
+    "profile_details": {
+      "profile_details_social": {
+        "following": {
+          "title": "追蹤中",
+          "empty": {
+            "others": "還沒有追蹤中的人",
+            "self": "還沒有追蹤中的人 \n 更多有趣的內容等你發現"
+          }
+        },
+        "followers": {
+          "title": "粉絲",
+          "empty": {
+            "others": "還沒有粉絲追蹤 \n 成為第一個吧?",
+            "self": "還沒有人追蹤你 \n 發布內容後被追蹤的機會更大哦"
+          }
+        }
+      }
+    },
+    "story_list": {
+      "story_card": {
+        "time": {
+          "now": "剛剛"
+        }
+      }
+    }
+  },
+  "containers": {
+    "account_body": {
+      "all": "全部",
+      "about": "簡介",
+      "empty": {
+        "all": "作者正努力構思故事",
+        "about": "作者正努力構思簡介"
+      },
+      "share_og_description": "瀏覽 {{profileName}} 的文章及動態。"
+    },
+    "related_articles": {
+      "title": "你可能感興趣"
+    },
+    "follow_button": {
+      "unfollow_modal_confirmation": {
+        "confirm_unfollow_text": "停止追蹤 @{{profileName}}"
+      }
+    }
+  },
+  "footer": {
+    "hotline": "01線報",
+    "about": "關於我們",
+    "career": "01招聘",
+    "advertise": "廣告查詢",
+    "app": "01App",
+    "faq": "常見問題",
+    "contact": "聯絡我們",
+    "privacy": "私隱聲明",
+    "terms": "使用條款及細則",
+    "copyright": "香港01有限公司版權所有 © 2019"
+  },
+  "buttons": {
+    "follow": "追蹤",
+    "following": "追蹤中",
+    "confirm_unfollow": "不再追蹤",
+    "share": "分享",
+    "search": "搜尋",
+    "sign_in": "登入",
+    "sign_out": "登出",
+    "create_story": "寫故事",
+    "manage_stories": "故事管理",
+    "pmp_pua_account_settings": "01號主頁設定",
+    "pmp_account_settings": "帳戶設定",
+    "copy": "複製",
+    "cancel": "取消",
+    "facebook": "分享至Facebook",
+    "whatsapp": "分享至Whatsapp",
+    "report_account": "舉報此用戶"
+  }
+}

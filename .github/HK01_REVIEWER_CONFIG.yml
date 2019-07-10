@@ -1,0 +1,17 @@
+reviewer:
+  global:
+    minApproval: 1
+    reviewer:
+      - login: conradchenghk01
+        require: false
+      - login: mikeleunghk01
+        require: false
+      - login: caseykwokhk01
+        require: false
+      - login: kowinauyeunghk01
+        require: false
+      - login: kelvinchunghk01
+        require: false
+      - login: joelihk01
+        require: false
+

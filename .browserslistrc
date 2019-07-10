@@ -1,0 +1,6 @@
+# run `npx browserslist` to see which browsers are supported
+# copied from CRA setting in package.json
+>0.2%
+not dead
+not ie < 11
+not op_mini all

@@ -1,0 +1,82 @@
+diff --git a/node_modules/photoswipe/dist/photoswipe.js b/node_modules/photoswipe/dist/photoswipe.js
+index 467c1ce..5f533e0 100644
+--- a/node_modules/photoswipe/dist/photoswipe.js
++++ b/node_modules/photoswipe/dist/photoswipe.js
+@@ -3510,8 +3510,18 @@ var _historyUpdateTimeout,
+ 				continue;
+ 			}
+ 			params[pair[0]] = pair[1];
+-		}
+-		if(_options.galleryPIDs) {
++    }
++    if(_options.useHashConfig) {
++			// detect custom media id in hash and search for it among the items collection
++			var searchfor = params.media_id;
++			params.pid = _currentItemIndex; // if custom pid cannot be found, stay in current item
++			for(i = 0; i < _items.length; i++) {
++				if(_items[i].mediaId === searchfor) {
++					params.pid = i;
++					break;
++				}
++			}
++		} else if(_options.galleryPIDs) {
+ 			// detect custom pid in hash and search for it among the items collection
+ 			var searchfor = params.pid;
+ 			params.pid = 0; // if custom pid cannot be found, fallback to the first item
+@@ -3556,7 +3566,15 @@ var _historyUpdateTimeout,
+ 			// carry forward any custom pid assigned to the item
+ 			pid = item.pid;
+ 		}
+-		var newHash = _initialHash + '&'  +  'gid=' + _options.galleryUID + '&' + 'pid=' + pid;
++		var newHash = '';
++    if (_options.useHashConfig && item.hashConfig && item.hashConfig.name && item.hashConfig.value) {
++      var hashConfig = item.hashConfig;
++      var hashName = hashConfig.name;
++      var hashValue = hashConfig.value;
++			newHash = hashName + '=' + hashValue;
++		} else {
++			newHash = _initialHash + '&'  +  'gid=' + _options.galleryUID + '&' + 'pid=' + pid;
++		}
+ 
+ 		if(!_historyChanged) {
+ 			if(_windowLoc.hash.indexOf(newHash) === -1) {
+diff --git a/node_modules/photoswipe/src/js/history.js b/node_modules/photoswipe/src/js/history.js
+index da13dd7..0f6d78a 100644
+--- a/node_modules/photoswipe/src/js/history.js
++++ b/node_modules/photoswipe/src/js/history.js
+@@ -66,7 +66,17 @@ var _historyUpdateTimeout,
+ 			}
+ 			params[pair[0]] = pair[1];
+ 		}
+-		if(_options.galleryPIDs) {
++		if(_options.useHashConfig) {
++			// detect custom media id in hash and search for it among the items collection
++			var searchfor = params.media_id;
++			params.pid = _currentItemIndex; // if custom pid cannot be found, stay in current item
++			for(i = 0; i < _items.length; i++) {
++				if(_items[i].mediaId === searchfor) {
++					params.pid = i;
++					break;
++				}
++			}
++		} else if(_options.galleryPIDs) {
+ 			// detect custom pid in hash and search for it among the items collection
+ 			var searchfor = params.pid;
+ 			params.pid = 0; // if custom pid cannot be found, fallback to the first item
+@@ -111,7 +121,15 @@ var _historyUpdateTimeout,
+ 			// carry forward any custom pid assigned to the item
+ 			pid = item.pid;
+ 		}
+-		var newHash = _initialHash + '&'  +  'gid=' + _options.galleryUID + '&' + 'pid=' + pid;
++		var newHash = '';
++    if (_options.useHashConfig && item.hashConfig && item.hashConfig.name && item.hashConfig.value) {
++      var hashConfig = item.hashConfig;
++      var hashName = hashConfig.name;
++      var hashValue = hashConfig.value;
++			newHash = hashName + '=' + hashValue;
++		} else {
++			newHash = _initialHash + '&'  +  'gid=' + _options.galleryUID + '&' + 'pid=' + pid;
++    }
+ 
+ 		if(!_historyChanged) {
+ 			if(_windowLoc.hash.indexOf(newHash) === -1) {
