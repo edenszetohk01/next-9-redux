@@ -1,0 +1,120 @@
+env:
+  es6: true
+  browser: true
+  node: true
+  jest: true
+
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+
+plugins:
+  - eslint-plugin-ramda
+  - eslint-plugin-react-redux
+  - eslint-plugin-redux-saga
+  - eslint-plugin-react-hooks
+
+extends:
+  - standard
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+  - plugin:react/recommended
+  - plugin:ramda/recommended
+  - plugin:redux-saga/recommended
+
+settings:
+  react:
+    version: detect
+
+rules:
+  no-console: ["warn", { allow: ["warn", "error"] }]
+  import/namespace: [2, { allowComputed: true }]
+  no-unused-vars: ["error", { "ignoreRestSiblings": true }]
+
+  # skip this rule if no prop-types
+  'react/prop-types': [error, { skipUndeclared: true }]
+  # use custom indent: 2 space
+  '@typescript-eslint/indent': off
+  # not useful to react component
+  '@typescript-eslint/explicit-member-accessibility': off
+  # disable this warning as we will not define return type of react component
+  '@typescript-eslint/explicit-function-return-type': off
+  # follow general standard
+  '@typescript-eslint/member-delimiter-style': off
+  # we prefer use type as component props definition
+  '@typescript-eslint/prefer-interface': off
+  # for nextjs server.js
+  '@typescript-eslint/no-var-requires': off
+
+  # must not use current state to deduce next state, since react will manage state asynchronously
+  react/no-access-state-in-setstate: error
+  # must not use array index as key, it might cause unncessary render
+  react/no-array-index-key: error
+  # must define only one react component in a file for readability (ignore stateless components)
+  react/no-multi-comp: [error, { "ignoreStateless": true }]
+  # must not use PureComponent with customized shouldComponentUpdate
+  react/no-redundant-should-component-update: error
+  # check common typos in react properties and liftcycle methods
+  react/no-typos: error
+  # must not have `this` in functional components
+  react/no-this-in-sfc: error
+  # must not use `UNSAFE_` react methods
+  react/no-unsafe: error
+  # must not have unused props and states
+  react/no-unused-prop-types: error
+  react/no-unused-state: error
+  # enforce empty component to be self closing
+  react/self-closing-comp: error
+  # enforce component organisation for readability and unity
+  react/sort-comp:
+    - error
+    - order:
+        [
+          "type-annotations",
+          "static-methods",
+          "instance-variables",
+          "lifecycle",
+          "/^handle.+$/",
+          "getters",
+          "setters",
+          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+          "instance-methods",
+          "everything-else",
+          "rendering",
+        ]
+      groups:
+        rendering: ["/^render.+$/", "render"]
+  # enforce `style` props be an object
+  react/style-prop-object: error
+  # void DOM element must not have children
+  react/void-dom-elements-no-children: error
+  # enforce omit `true` to set boolean props
+  react/jsx-boolean-value: error
+  # avoid error caused by unintended spacing in react children
+  react/jsx-child-element-spacing: error
+  # enforce event handler naming prefix
+  react/jsx-handler-names: error
+  # react component must be in PascalCase
+  react/jsx-pascal-case: error
+
+  # use `R.T()` instead of `R.always(true)`
+  ramda/always-simplification: error
+  # use `R.chain` instead of `R.compose(R.flatten, R.map)`
+  ramda/compose-simplification: error
+  # use `R.eqProps` instead of `R.eqBy(R.prop(_))`
+  ramda/eq-by-simplification: error
+  # use `R.both`/`R.either` instead of `R.allPass`/`R.anyPass` when there is only two predicates
+  ramda/prefer-both-either: error
+  # use `R.complement` instead of `R.compose(R.not, ...)`
+  ramda/prefer-complement: error
+
+  react-hooks/rules-of-hooks: error
+
+  # disable no-callback-literal
+  standard/no-callback-literal: 0
+
+globals:
+  FB: true

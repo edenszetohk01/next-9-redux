@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <rect id="a" width="17" height="1.1" x=".5" rx=".55"/>
+    </defs>
+    <g fill="#000" fill-opacity=".78" fill-rule="evenodd" transform="translate(3 5)">
+        <use xlink:href="#a"/>
+        <rect width="17" height="1.1" x=".5" y="6" rx=".55"/>
+        <rect width="17" height="1.1" x=".5" y="12" rx=".55"/>
+    </g>
+</svg>

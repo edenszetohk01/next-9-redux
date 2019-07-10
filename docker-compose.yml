@@ -1,0 +1,24 @@
+version: "2.3"
+
+services:
+  frontend:
+    build:
+      context: .
+      # a shortcut for debug multi-stage build stage
+#      target: builder
+      args:
+        NPM_TOKEN: $NPM_TOKEN
+        TRAVIS_TIMESTAMP: "0000-00-00 00:00:00"
+        TRAVIS_COMMIT: xxxxxxxxx
+        TRAVIS_BUILD_NUMBER: 1
+        TRAVIS_BRANCH: development
+    environment:
+      PORT: 3000
+    volumes:
+    - "./.env.staging:/srv/.env"
+    image: self-media-pua-web
+    # entrypoint overwrite to keep the container for debug
+#    entrypoint: tail -f /dev/null
+    ports:
+      - "3000:3000"
+
