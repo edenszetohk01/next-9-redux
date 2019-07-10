@@ -1,8 +1,8 @@
-# Self Media PUA Web
+# dce2019-web
 
-[![Build Status](https://travis-ci.com/hk01-digital/self-media-pua-web.svg?token=pVpstsBpBDrehm35Nnay&branch=development)](https://travis-ci.com/hk01-digital/self-media-pua-web) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components) ![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
+[![Build Status](https://travis-ci.com/hk01-digital/self-media-pua-web.svg?token=pVpstsBpBDrehm35Nnay&branch=development)](https://travis-ci.com/hk01-digital/dce2019-web) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components) ![npm type definitions](https://img.shields.io/npm/types/typescript.svg)
 
-PUA Web is the client facing Frontend product for Public Account. It showcases the features that are provided for Public Account. This repository is supporting not only Web Frontend but also WebView App Client in HK01 Mobile App.
+Website for District Council Elections 2019
 
 ### Development
 
